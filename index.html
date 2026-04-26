@@ -261,18 +261,42 @@
     @media (max-width: 768px) {
       .hide-mobile { display: none; }
 
-      /* Tabela: 2 colunas, esconde coluna de label */
+      /* ── TABELA MOBILE ── */
+      /* Header: esconde coluna de label, mantém SEM / COM */
       .cmp-row { grid-template-columns: 1fr 1fr; }
-      .cmp-row .cmp-cell:first-child,
       .cmp-row .cmp-head:first-child { display: none; }
-      .cmp-head { padding: 0.65rem 0.6rem; font-size: 0.6rem; letter-spacing: 0.1em; }
-      .cmp-cell { padding: 0.7rem 0.6rem; font-size: 0.82rem; }
+      .cmp-head {
+        padding: 0.7rem 0.4rem;
+        font-size: 0.58rem;
+        letter-spacing: 0.07em;
+        text-align: center;
+      }
+
+      /* Linhas de dados: label sobe para linha inteira no topo */
+      .cmp-row .cmp-cell:first-child {
+        display: flex !important;
+        grid-column: 1 / -1;
+        justify-content: center;
+        align-items: center;
+        padding: 0.55rem 1rem 0.25rem;
+        font-size: 0.7rem;
+        color: rgba(255,255,255,0.42);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        min-height: unset;
+      }
+      /* Células de valor */
+      .cmp-cell {
+        padding: 0.5rem 0.4rem 0.7rem;
+        font-size: 0.82rem;
+      }
+      /* Reduz números grandes inline */
+      .cmp-row .cmp-cell.fd[style*="1.5rem"] { font-size: 1.15rem !important; }
+      .cmp-row .cmp-cell.fd[style*="1.15rem"] { font-size: 0.95rem !important; }
+      /* Subtitle "DIRETO NO SEU CAIXA" */
+      .cmp-row .cmp-cell.fd span { font-size: 0.52rem !important; letter-spacing: 0.04em !important; }
 
       /* Footer logo centralizado */
-      footer img { display: block; margin-left: auto; margin-right: auto; height: 56px; }
-
-      /* Footer links empilhados */
-      footer .wrap > div { gap: 1.1rem; }
+      footer img { display: block; margin-left: auto; margin-right: auto; height: 52px; }
     }
 
     /* ── FOOTER LINKS ── */
