@@ -260,8 +260,19 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .hide-mobile { display: none; }
+
+      /* Tabela: 2 colunas, esconde coluna de label */
       .cmp-row { grid-template-columns: 1fr 1fr; }
-      .cmp-row .cmp-cell:first-child { display: none; }
+      .cmp-row .cmp-cell:first-child,
+      .cmp-row .cmp-head:first-child { display: none; }
+      .cmp-head { padding: 0.65rem 0.6rem; font-size: 0.6rem; letter-spacing: 0.1em; }
+      .cmp-cell { padding: 0.7rem 0.6rem; font-size: 0.82rem; }
+
+      /* Footer logo centralizado */
+      footer img { display: block; margin-left: auto; margin-right: auto; height: 56px; }
+
+      /* Footer links empilhados */
+      footer .wrap > div { gap: 1.1rem; }
     }
 
     /* ── FOOTER LINKS ── */
